@@ -117,14 +117,17 @@ app.get('/forum',
       for (post of posts) {
         const username = post.username;
         const profile = await User.find({username});
-        const bimg = profile.map(x => x.avatar.data);
-        const type = profile.map(x => x.avatar.contentType);
-        const forumname = profile.map(x => x.forumname);
+        let bimg = profile.map(x => x.avatar.data);
+        let type = profile.map(x => x.avatar.contentType);
+        let forumname = profile.map(x => x.forumname);
         let img;
-        if (bimg != null) {
+        if (bimg[0] != null) {
           img = bimg.map(x => Buffer.from(x, 'base64').toString('base64'));
         } else {
           img = null;
+        }
+        if (forumname[0] == null) {
+          forumname = "Anonymous";
         }
         postsWithFig.push({
           img: img,
@@ -234,15 +237,17 @@ const upload = multer({ storage: storage })
 app.post('/updateProfile', upload.single('avatar'),
   async (req, res, next) => {
     try {
-      const user = res.locals.user;
-      const username = user.username;
-      const newAvatar = {
-        data: new Buffer(fs.readFileSync(path.join(__dirname + '/public/images/' + req.file.filename)), 'base64'),
-        contentType: req.file.mimetype,
+      if (req.file != null) {
+        const user = res.locals.user;
+        const username = user.username;
+        const newAvatar = {
+          data: new Buffer(fs.readFileSync(path.join(__dirname + '/public/images/' + req.file.filename)), 'base64'),
+          contentType: req.file.mimetype,
+        }
+        res.locals.user.avatar = newAvatar;
+        await User.findOneAndUpdate({username}, user, {upsert: false})
+        fs.unlinkSync(path.join(__dirname + '/public/images/' + req.file.filename));
       }
-      res.locals.user.avatar = newAvatar;
-      await User.findOneAndUpdate({username}, user, {upsert: false})
-      fs.unlinkSync(path.join(__dirname + '/public/images/' + req.file.filename));
       res.redirect('/profile')
     
     } catch (e) {
