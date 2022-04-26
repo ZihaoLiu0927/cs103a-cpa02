@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <br>
+            <h4>You forum name: </h4>
+            <% if (user.forumname == null) {
+                    buttonText = "Submit"; %>
+                    <h3> <strong>Anonymous</strong> </h3>
+                <% } else {
+                    buttonText = "change name"; %>
+                    <h3 class="bg-light text-primary"><strong><%= user.forumname%></strong></h3>
+                <% } %>
+
+
+            <form method="post" action="/setName">
+                <div class="form-group">
+                    <input type="text" class="form-control" name = "forumname" placeholder="Enter your name here">
+                    <small  class="form-text text-muted">Please set your name to start your post.</small> 
+                </div>
+                    <br>
+                    <button  type="submit" class="btn btn-primary"><%= buttonText %></button>
+            </form>
+            <hr>
+
+            <form method="post" action="/updateProfile" enctype="multipart/form-data">
+                <div>
+                    <label>
+                        <input type="file" name="avatar" style="display:none" accept="image/gif, image/jpeg, image/png">
+                        <% if (user.avatar == null || user.avatar.data == null) { %>
+                            <img src= "/images/noUser.jpeg" style="width:200px; height:200px; border-radius: 50%;">
+                        <% } else { %>
+                            <img src= "data:<%=user.avatar.contentType%>;base64,<%=imgprofile%>" style="width:200px; height:200px; border-radius: 50%;">
+                        <% } %>
+                    </label>
+                </div>
+                    <button type="submit" class="m-5  btn btn-primary">Update</button>
+            </form>
+        </div>
+
+        <div class="col-sm-1"> </div>
+
+        <div class="col-sm-7">
+            <div class="col"> 
+                <div class="row bg-success" style="height: 300px">
+                    <h1 class="text-white">Bio </h1><br>
+                </div>
+                <div class="row bg-dark p-3" bg style="height: 300px">
+                    <form method="post" action="/setIntro">
+                        <div class="form-group">
+                            <textarea class="form-control" name = "intro" rows="6" placeholder=""> </textarea>
+                            <small  class="form-text text-muted">Please write down your introduction here.</small> 
+                        </div>
+                            <br>
+                            <button  type="submit" class="btn btn-primary"> update </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
