@@ -1,7 +1,6 @@
 # CS103a Express App Demo
 
-This is a starter project which has a simple authentication module 
-and provides access to a mongoose database in the cloud.
+This is a starter project which builds a forum that can be used for different porposes.
 
 ## Installation
 Download the project from github and download nodejs and npm from https://nodejs.org
