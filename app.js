@@ -15,32 +15,25 @@ const debug = require("debug")("personalapp:server");
 const layouts = require("express-ejs-layouts");
 const fs = require('fs');
 const multer = require('multer');
-const axios = require("axios")
+const dotenv = require("dotenv")
 
 
 // *********************************************************** //
 //  Loading models
 // *********************************************************** //
-const ToDoItem = require("./models/ToDoItem")
-const Course = require('./models/Course')
-const Schedule = require('./models/Schedule')
 const Post = require("./models/Post")
 
 // *********************************************************** //
 //  Loading JSON datasets
 // *********************************************************** //
-const courses = require('./public/data/courses20-21.json')
-
 
 // *********************************************************** //
 //  Connecting to the database
 // *********************************************************** //
 
+dotenv.config()
 const mongoose = require( 'mongoose' );
-const mongodb_URI = 'mongodb+srv://ZihaoLiu0927:OQP4utcTabM5EsWr@cluster0.gnq5x.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
-//const mongodb_URI = 'mongodb+srv://cs_sj:BrandeisSpr22@cluster0.kgugl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
-//mongodb+srv://cs103a:<password>@cluster0.kgugl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
-
+const mongodb_URI = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.gnq5x.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 mongoose.connect( mongodb_URI, { useNewUrlParser: true, useUnifiedTopology: true } );
 // fix deprecation warnings
 mongoose.set('useFindAndModify', false);  
