@@ -24,7 +24,7 @@ nodemon
 ```
 # Sample snapshots 
 <img width="1313" alt="Screen Shot 2022-04-26 at 2 35 36 PM" src="https://user-images.githubusercontent.com/66043240/165368984-cf1969c0-d784-40ce-8df5-1ffba6bfd0ff.png">
-
+# Sample snapshots
 <img width="1365" alt="Screen Shot 2022-04-26 at 2 34 10 PM" src="https://user-images.githubusercontent.com/66043240/165369072-9c659d47-23cb-4228-bd7d-7f3143846009.png">
 
 
