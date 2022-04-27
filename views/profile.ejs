@@ -41,14 +41,17 @@
 
         <div class="col-sm-7">
             <div class="col"> 
-                <div class="row bg-success" style="height: 300px">
-                    <h1 class="text-white">Bio </h1><br>
+                <div class="row bg-success" style="height: 60px">
+                    <h1 class="text-white">Bio </h1>
+                </div>
+                <div class="row bg-success" style="height: 240px">
+                    <p class="text-white m-3"><%- user.intro%></p>
                 </div>
                 <div class="row bg-dark p-3" bg style="height: 300px">
                     <form method="post" action="/setIntro">
                         <div class="form-group">
                             <textarea class="form-control" name = "intro" rows="6" placeholder=""> </textarea>
-                            <small  class="form-text text-muted">Please write down your introduction here.</small> 
+                            <small  class="form-text text-muted">Please write introduce yourself here.</small> 
                         </div>
                             <br>
                             <button  type="submit" class="btn btn-primary"> update </button>

@@ -7,6 +7,7 @@ var userSchema = Schema( {
   passphrase: String,
   age: String,
   forumname: String,
+  intro: String,
   avatar: 
   { 
     data: Buffer, 

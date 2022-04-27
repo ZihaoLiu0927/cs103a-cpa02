@@ -223,6 +223,22 @@ app.post('/setName',
   }
 )
 
+app.post('/setIntro',
+  async (req,res,next) => {
+    try {
+      let {intro} = req.body;
+      const user = res.locals.user;
+      const username = user.username;
+      user.intro = intro.replace(/\n/g, "<br>");
+      await User.findOneAndUpdate({username}, user, {upsert: false})
+      res.locals.user.intro = intro;
+      res.redirect('/profile')
+    } catch(e){
+      next(e)
+    } 
+  }
+)
+
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, __dirname + '/public/images')
