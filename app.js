@@ -15,7 +15,7 @@ const debug = require("debug")("personalapp:server");
 const layouts = require("express-ejs-layouts");
 const fs = require('fs');
 const multer = require('multer');
-//const dotenv = require("dotenv")
+const dotenv = require("dotenv")
 
 
 // *********************************************************** //
@@ -31,10 +31,9 @@ const Post = require("./models/Post")
 //  Connecting to the database
 // *********************************************************** //
 
-//dotenv.config()
+dotenv.config()
 const mongoose = require( 'mongoose' );
-const mongodb_URI = "mongodb+srv://ZihaoLiu0927:OQP4utcTabM5EsWr@cluster0.gnq5x.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-//const mongodb_URI = process.env.DB_URL;
+const mongodb_URI = process.env.DB_URL;
 mongoose.connect( mongodb_URI, { useNewUrlParser: true, useUnifiedTopology: true } );
 // fix deprecation warnings
 mongoose.set('useFindAndModify', false);  
@@ -71,13 +70,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Here we enable session handling using cookies
-// app.use(
-//   session({
-//     secret: "zzbbyanana789sdfa8f9ds8f90ds87f8d9s789fds", // this ought to be hidden in process.env.SECRET
-//     resave: false,
-//     saveUninitialized: false
-//   })
-// );
+app.use(
+  session({
+    secret: "zzbbyanana789sdfa8f9ds8f90ds87f8d9s789fds", // this ought to be hidden in process.env.SECRET
+    resave: false,
+    saveUninitialized: false
+  })
+);
 
 // *********************************************************** //
 //  Defining the routes the Express server will respond to
@@ -317,7 +316,7 @@ app.use(function(err, req, res, next) {
 //Here we set the port to use between 1024 and 65535  (2^16-1)
 
 //const port = "4500";
-const port = process.env.PORT || "5000";
+const port = process.env.PORT || "4500";
 
 app.set("port", port);
 
