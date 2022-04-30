@@ -71,13 +71,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Here we enable session handling using cookies
-app.use(
-  session({
-    secret: "zzbbyanana789sdfa8f9ds8f90ds87f8d9s789fds", // this ought to be hidden in process.env.SECRET
-    resave: false,
-    saveUninitialized: false
-  })
-);
+// app.use(
+//   session({
+//     secret: "zzbbyanana789sdfa8f9ds8f90ds87f8d9s789fds", // this ought to be hidden in process.env.SECRET
+//     resave: false,
+//     saveUninitialized: false
+//   })
+// );
 
 // *********************************************************** //
 //  Defining the routes the Express server will respond to
