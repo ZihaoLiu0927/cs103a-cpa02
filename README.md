@@ -27,7 +27,8 @@ nodemon
 
 
 # Sample snapshot
-<img width="1378" alt="Screen Shot 2022-04-30 at 2 41 28 PM" src="https://user-images.githubusercontent.com/66043240/166118572-6f880c5a-8774-4c96-bc4b-322c7e2603ee.png">
+<img width="1385" alt="Screen Shot 2022-04-30 at 2 47 30 PM" src="https://user-images.githubusercontent.com/66043240/166118689-56a52e44-5fb0-41ae-99fe-28eb46c6ea24.png">
+
 
 
 
