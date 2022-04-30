@@ -1,8 +1,10 @@
-<h1>Forum</h1>
-Please be polite when posting and commenting others posts!
+<h1>Magic Forum</h1>
+<span class="text-muted">Please be polite when posting and commenting others posts!</span>
 <hr>
 
-<a class="nav-link" href="/addPost">new post</a>
+<a class="nav-link" href="/addPost">
+<button  type="button" class="btn btn-primary"> New Post </button>
+</a>
 
 <hr>
 <% for (p of posts) { %>
@@ -27,7 +29,9 @@ Please be polite when posting and commenting others posts!
                 <div class="col-sm-11"></div>
                 <% if (user.username == p.post.username) { %>
                 <div class="col-sm-1">
-                    <a href="/forum/remove/<%= p.post._id %>" style="color:red">delete</a>
+                    <a href="/forum/remove/<%= p.post._id %>" style="color:red">
+                        <button  type="button" class="btn btn-danger" style="font-size: 10px;">Delete</button>
+                    </a>
                 </div>
                 <% } else { %>
                 <div class="col-sm-1">

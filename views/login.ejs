@@ -2,36 +2,35 @@
 
     <div class="row">
       
-        <div class="col-sm-5">
+        <div class="col-sm-5 bg-success text-light">
             <h2>Login</h2>
             <form method="post" action="/login">
-                username: <input type="text"
+                Username: <input type="text"
                                  autocomplete="username"
-                                 name="username"><br>
-                passphrase: <input  type="password"
+                                 name="username"><br><br>
+                Passphrase: <input  type="password"
                                     autocomplete="passphrase"
-                                    name="passphrase"><br>
-                <input type="submit">
+                                    name="passphrase"><hr>
+                <input type="submit" class="btn btn-primary">
             </form>
         </div>
       
-        <div class="col-sm-2" style="text-align:center">
-            OR
+        <div class="col-sm-1 bg-light">
+            
         </div>
       
-        <div class="col-sm-5">
+        <div class="col-sm-5 bg-info text-light">
             <h2>Signup</h2>
             <form method="post" action="/signup">
-                username: <input type="text" autocomplete="username" name="username"><br>
-                password
-                   <input type="password" autocomplete="passphrase" name="passphrase"><br>
-                confirm password:
-                    <input type="password" name="passphrase2"><br>
+                Username: <input type="text" autocomplete="username" name="username"><br><br>
+                Password
+                   <input type="password" autocomplete="passphrase" name="passphrase"><br><br>
+                Confirm Password:
+                    <input type="password" name="passphrase2"><br><br>
               
-                age: <input type="number" name="age"><br>
-              
-              
-                <input type="submit">
+                Age: <input type="number" name="age"><hr>
+        
+                <input type="submit" class="btn btn-danger"><br><br>
             </form>
         </div>
     </div>
