@@ -1,6 +1,6 @@
 # CS103a Express App Porject
 
-This is a starter project which builds a forum that can be used for different porposes. The App has been deployed to Heroku where everyone can click the [App Link](https://pure-gorge-05438.herokuapp.com/) and take a look. A video is provided here to demenstrate that I meet all the requirements in the rubic [video](https://brandeis.zoom.us/rec/play/0Xl-baT8uqFYUiXn6j2RKnda_ypgAD4AbdI3ioSFRYK9IM4IkH0j8p-eKzlWprGdZMPS7JYFWhoX2YD4.iX4hS65ARUnLFjZs?autoplay=true&startTime=1651352544000).
+This is a starter project which builds a forum that can be used for different porposes. The App has been deployed to Heroku where everyone can click the [App Link](https://pure-gorge-05438.herokuapp.com/) and take a look. A [video](https://brandeis.zoom.us/rec/play/0Xl-baT8uqFYUiXn6j2RKnda_ypgAD4AbdI3ioSFRYK9IM4IkH0j8p-eKzlWprGdZMPS7JYFWhoX2YD4.iX4hS65ARUnLFjZs?autoplay=true&startTime=1651352544000) is provided here to demenstrate that I meet all the requirements in the rubic.
 
 ## Installation
 Download the project from github and download nodejs and npm from https://nodejs.org
