@@ -15,7 +15,7 @@ const debug = require("debug")("personalapp:server");
 const layouts = require("express-ejs-layouts");
 const fs = require('fs');
 const multer = require('multer');
-const dotenv = require("dotenv")
+//const dotenv = require("dotenv")
 
 
 // *********************************************************** //
@@ -31,9 +31,9 @@ const Post = require("./models/Post")
 //  Connecting to the database
 // *********************************************************** //
 
-dotenv.config()
+//dotenv.config()
 const mongoose = require( 'mongoose' );
-const mongodb_URI = process.env.DB_URL;
+const mongodb_URI = process.env.mongodb_URI;
 mongoose.connect( mongodb_URI, { useNewUrlParser: true, useUnifiedTopology: true } );
 // fix deprecation warnings
 mongoose.set('useFindAndModify', false);  
