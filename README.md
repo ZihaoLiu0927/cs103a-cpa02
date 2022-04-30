@@ -1,6 +1,6 @@
 # CS103a Express App Porject
 
-This is a starter project which builds a forum that can be used for different porposes. The App has been deployed to Heroku where everyone can click the [app link](https://pure-gorge-05438.herokuapp.com/) and take a look.
+This is a starter project which builds a forum that can be used for different porposes. The App has been deployed to Heroku where everyone can click the <a href="https://pure-gorge-05438.herokuapp.com/" target="_blank">App Link</a> and take a look.
 
 ## Installation
 Download the project from github and download nodejs and npm from https://nodejs.org
