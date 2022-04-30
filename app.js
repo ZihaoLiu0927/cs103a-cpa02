@@ -33,7 +33,8 @@ const Post = require("./models/Post")
 
 dotenv.config()
 const mongoose = require( 'mongoose' );
-const mongodb_URI = process.env.DB_URL;
+const mongodb_URI = "mongodb+srv://ZihaoLiu0927:OQP4utcTabM5EsWr@cluster0.gnq5x.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+//const mongodb_URI = process.env.DB_URL;
 mongoose.connect( mongodb_URI, { useNewUrlParser: true, useUnifiedTopology: true } );
 // fix deprecation warnings
 mongoose.set('useFindAndModify', false);  
