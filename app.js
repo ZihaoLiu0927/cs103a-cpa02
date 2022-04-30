@@ -15,7 +15,7 @@ const debug = require("debug")("personalapp:server");
 const layouts = require("express-ejs-layouts");
 const fs = require('fs');
 const multer = require('multer');
-const dotenv = require("dotenv")
+//const dotenv = require("dotenv")
 
 
 // *********************************************************** //
@@ -31,7 +31,7 @@ const Post = require("./models/Post")
 //  Connecting to the database
 // *********************************************************** //
 
-dotenv.config()
+//dotenv.config()
 const mongoose = require( 'mongoose' );
 const mongodb_URI = "mongodb+srv://ZihaoLiu0927:OQP4utcTabM5EsWr@cluster0.gnq5x.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 //const mongodb_URI = process.env.DB_URL;
