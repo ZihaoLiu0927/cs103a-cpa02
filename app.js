@@ -85,7 +85,7 @@ app.use(
 
 // here is the code which handles all /login /signin /logout routes
 const auth = require('./routes/auth');
-const { deflateSync } = require("zlib");
+//const { deflateSync } = require("zlib");
 app.use(auth)
 
 // middleware to test is the user is logged in, and if not, send them to the login page
@@ -258,7 +258,7 @@ app.post('/updateProfile', upload.single('avatar'),
         const user = res.locals.user;
         const username = user.username;
         const newAvatar = {
-          data: new Buffer(fs.readFileSync(path.join(__dirname + '/public/images/' + req.file.filename)), 'base64'),
+          data: fs.readFileSync(path.join(__dirname + '/public/images/' + req.file.filename)),
           contentType: req.file.mimetype,
         }
         res.locals.user.avatar = newAvatar;
