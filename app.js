@@ -64,7 +64,7 @@ app.use(layouts);
 // Here we process the requests so they are easy to handle
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+//app.use(cookieParser());
 
 // Here we specify that static files will be in the public folder
 app.use(express.static(path.join(__dirname, "public")));
